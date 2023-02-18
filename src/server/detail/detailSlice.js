@@ -17,10 +17,12 @@ export const detailSlice = createSlice({
          .addCase(fetchData.fulfilled, (state, action) => {
             state.book = action.payload;
             state.status = 'idle';
+            state.isSuccess = false;
          })
          .addCase(fetchData.rejected, (state, action) => {
             state.status = 'error';
-            console.log(action)
+            console.log(action);
+            state.isSuccess = false;
             state.error = 'Id of book wrong';
          })
          .addCase(fetchAddBooks.fulfilled, (state, action) => {
