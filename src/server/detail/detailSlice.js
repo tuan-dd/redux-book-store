@@ -25,7 +25,7 @@ export const detailSlice = createSlice({
          })
          .addCase(fetchAddBooks.fulfilled, (state, action) => {
             state.isSuccess = true;
-            state.status = 'idle';
+            state.status = 'success';
          })
          .addCase(fetchAddBooks.rejected, (state, action) => {
             state.status = 'error';

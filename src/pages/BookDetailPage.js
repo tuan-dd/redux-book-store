@@ -15,7 +15,7 @@ const BookDetailPage = () => {
    const bookId = params.id;
 
    useEffect(() => {
-      if (dataBook.isSuccess) {
+      if (dataBook.isSuccess && dataBook.status === 'success') {
          toast.success('add favorites success');
       }
       if (dataBook.status === 'error') {
@@ -27,7 +27,7 @@ const BookDetailPage = () => {
 
    useEffect(() => {
       dispatch(fetchData(bookId));
-   // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [bookId]);
 
    return (
